@@ -1,0 +1,42 @@
+<h1>Office</h1>
+<form action="/office?_method=PUT" method="POST">
+  {{#if user}}
+    <div class="input-field">
+      <input
+        id="email"
+        type="email"
+        name="email"
+        value="{{user.email}}"
+        required
+      />
+      <label for="email">Email:</label>
+    </div>
+  {{/if}}
+  <div class="input-field">
+    <input id="password" type="password" name="password" required />
+    <label for="password">Password:</label>
+  </div>
+  <div class="input-field">
+    <input id="checkPassword" type="password" name="checkPassword" required />
+    <label for="checkPassword">Enter your password:</label>
+  </div>
+  <button class="btn waves-effect waves-light" type="submit">Edit data</button>
+  <hr />
+  {{error}}
+</form>
+<br />
+<hr />
+<br />
+
+<div class="row">
+  <div class="col"><a
+      href="logout"
+      class="btn waves-effect waves-light"
+      type="submit"
+    >Log out</a></div>
+  <div class="col md-2">
+    <button
+      class="btn waves-effect waves-light red"
+      data-delete-user="true"
+    >Delete User</button></div>
+</div>

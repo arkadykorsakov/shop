@@ -1,0 +1,50 @@
+<h1>Cart</h1>
+
+{{#if products}}
+  <div class="row">
+
+    <table>
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Count</td>
+          <td>Delete One</td>
+          <td>Delete All</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each products}}
+          <tr>
+            <td>{{this.item.title}}</td>
+            <td>{{this.qty}}</td>
+            <td><a
+                class="btn btn-small red"
+                href="cart/reduce/{{this.item._id}}"
+              >Delete One</a></td>
+            <td><a
+                class="btn btn-small red js-remove"
+                href="cart/remove/{{this.item._id}}"
+              >Delete All</a></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <strong>Total: {{totalPrice}}</strong>
+    </div>
+  </div>
+  <hr />
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <a href="/order" class="btn btn-raised btn-success">Make an order</a>
+    </div>
+  </div>
+{{else}}
+  <div class="empty">
+    <h2>Oops, your cart is empty</h2>
+  </div>
+{{/if}}

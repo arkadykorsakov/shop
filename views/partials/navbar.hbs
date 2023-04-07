@@ -1,0 +1,51 @@
+<nav class="green">
+  <div class="container">
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo">Shop NodeJS</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        {{#if isHome}}
+          <li class="active"><a href="/">Main page</a></li>
+        {{else}}
+          <li><a href="/">Main page</a></li>
+        {{/if}}
+        {{#if isAuth}}
+          {{#if isOffice}}
+            <li class="active"><a href="/office">Office</a></li>
+          {{else}}
+            <li><a href="/office">Office</a></li>
+          {{/if}}
+          {{#if isProducts}}
+            <li class="active"><a href="/products">List of products</a></li>
+          {{else}}
+            <li><a href="/products">List of products</a></li>
+          {{/if}}
+          {{#if isAdmin}}
+            {{#if isCategory}}
+              <li class="active"><a href="/category">Category</a></li>
+            {{else}}
+              <li><a href="/category">Category</a></li>
+            {{/if}}
+          {{else}}
+            {{#if isCart}}
+              <li class="active"><a href="/cart">Cart</a></li>
+            {{else}}
+              <li><a href="/cart">Cart</a></li>
+            {{/if}}
+          {{/if}}
+        {{else}}
+          {{#if isLogin}}
+            <li class="active"><a href="/login">Log in</a></li>
+          {{else}}
+            <li><a href="/login">Log in</a></li>
+          {{/if}}
+
+          {{#if isRegister}}
+            <li class="active"><a href="/registration">Registration</a></li>
+          {{else}}
+            <li><a href="/registration">Registration</a></li>
+          {{/if}}
+        {{/if}}
+      </ul>
+    </div>
+  </div>
+</nav>

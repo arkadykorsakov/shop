@@ -1,0 +1,29 @@
+<h1>Edit Category</h1>
+{{#if category}}
+  <form action="/category/{{category._id}}/edit?_method=PUT" method="POST">
+
+    <div class="input-field">
+      <input
+        id="title"
+        name="title"
+        type="text"
+        class="validate"
+        value="{{category.title}}"
+        required
+      />
+      <label for="title">Title of category</label>
+      <span class="helper-text" data-error="Add title"></span>
+    </div>
+
+    <button class="btn waves-effect waves-light">Edit category</button>
+  </form>
+{{else}}
+  Category not found
+{{/if}}
+
+{{#if error}}
+  <br />
+  <hr />
+  <br />
+  <p>{{error}}</p>
+{{/if}}

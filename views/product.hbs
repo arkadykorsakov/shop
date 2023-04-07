@@ -1,0 +1,10 @@
+<div class="course">
+  {{#if product}}
+    <h1>{{product.title}}</h1>
+    <img src="../{{product.image}}" alt={{product.title}} />
+    <p class="new badge blue">{{product.category}}</p>
+    <p class="price big">{{product.price}}</p>
+  {{else}}
+    <p>Prodict not found</p>
+  {{/if}}
+</div>

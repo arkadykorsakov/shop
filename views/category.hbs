@@ -1,0 +1,34 @@
+<h1>Category</h1>
+<div id="card">
+  {{#if categories.length}}
+    <table>
+      <thead>
+        <tr>
+          <td>Title</td>
+          <td>Update</td>
+          <td>Delete</td>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each categories}}
+          <tr>
+            <td>{{title}}</td>
+            <td><a
+                class="btn btn-small"
+                href="/category/{{_id}}/edit"
+              >Update</a></td>
+            <td><button
+                class="btn btn-small red"
+                data-id-category="{{_id}}"
+              >Delete</button></td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+    <br />
+  {{else}}
+    <p>Category is empty</p>
+    <br />
+  {{/if}}
+  <a href="/category/add" class="btn">Add category</a>
+</div>

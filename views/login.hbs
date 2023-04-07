@@ -1,0 +1,19 @@
+<div class="auth-block">
+  <form action="/login" method="post" class="card">
+    <div class="card-content">
+      <span class="card-title">Log in to the system</span>
+      <div class="input-field">
+        <input id="email" type="email" name="email" required class="validate" />
+        <label for="email">Email:</label>
+      </div>
+      <div class="input-field">
+        <input id="password" type="password" name="password" required />
+        <label for="password">Password:</label>
+      </div>
+    </div>
+    <div class="card-action">
+      <button type="submit" class="modal-action btn waves-effect">Log in</button>
+    </div>
+  </form>
+  {{error}}
+</div>
